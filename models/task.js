@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-const taskSchema=new mongoose({
+const taskSchema=new mongoose.Schema({
     name:{
         type:String,
         required:true,
@@ -10,7 +10,7 @@ const taskSchema=new mongoose({
     },
     startTime:{
         type:String,
-        default:'12:00:00',
+
     },
     endDate:{
         type:Date,
@@ -18,14 +18,14 @@ const taskSchema=new mongoose({
     },
     endTime:{
         type:String,
-        default:'23:59:59',
+        
     },
     dateComplete:{
-type:date,
+type:Date,
     },
 status:{
-    type:String,
+    type:String
 }
 })
-const task=mongoose.model('todo',taskSchema)
-export default task
+const taskModel=mongoose.model('todo',taskSchema)
+export default taskModel
